@@ -13,31 +13,24 @@ const email = prompt("What's your email?")
 
 //controllo se l'email inserita dall'utente rientra tra quelle concesse
 for (let i = 0; i < allowedUsers.length; i++) {
-    //creo una variabile che prenda tutti i singoli elementi dell'array allowedUsers
-    const emailCheck = allowedUsers[i];
-    // console.log(emailCheck)
-    const body = document.querySelector('body');
+    // console.log(allowedUsers[i])
 
     //controllo se l'elemento dell'array attualmente selezionato combaci con l'email inserita dall'utente
-    if (email === emailCheck){
-        // console.log('Sei dentro')
-        
+    if (email === allowedUsers[i]){
+        console.log('Sei dentro')
         //mostra a schermo l'esito del check.
         const Pass = `<h1><i>${email}</i> è nella mia lista. Sei dentro!</h1>`;
         // body.insertAdjacentHTML('afterbegin', Pass); //NOT WORKING
-        body.innerHTML = Pass
+        document.querySelector('body').innerHTML = Pass
         
     } else {
-        // console.log('Sei fuori')
-        
+        console.log('Sei fuori')
         //mostra a schermo l'esito del check.
         const notPass = `<h1>Non ho mai sentito parlare di <i>${email}</i>, mi spiace sei fuori. </h1>`;
-        body.innerHTML = notPass
+        document.querySelector('body').innerHTML = notPass
     }
     
 }
-
-//if (email === allowedUsers[])
 
 
 /*
