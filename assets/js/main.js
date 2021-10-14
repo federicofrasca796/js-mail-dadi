@@ -19,15 +19,15 @@ for (let i = 0; i < allowedUsers.length; i++) {
     if (email === allowedUsers[i]){
         console.log('Sei dentro')
         //mostra a schermo l'esito del check.
-        const Pass = `<h1><i>${email}</i> è nella mia lista. Sei dentro!</h1>`;
+        const Pass = `<i>${email}</i> è nella mia lista. Sei dentro!`;
         // body.insertAdjacentHTML('afterbegin', Pass); //NOT WORKING
-        document.querySelector('body').innerHTML = Pass
+        document.getElementById('mailResult').innerHTML = Pass
         
     } else {
         console.log('Sei fuori')
         //mostra a schermo l'esito del check.
-        const notPass = `<h1>Non ho mai sentito parlare di <i>${email}</i>, mi spiace sei fuori. </h1>`;
-        document.querySelector('body').innerHTML = notPass
+        const notPass = `Non ho mai sentito parlare di <i>${email}</i>, mi spiace sei fuori.`;
+        document.getElementById('mailResult').innerHTML = notPass
     }
     
 }
@@ -38,3 +38,4 @@ GIOCO DEI DADI
 Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
 Stabilire il vincitore, in base a chi fa il punteggio più alto.
 */
+
