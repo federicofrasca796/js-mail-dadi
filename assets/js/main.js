@@ -7,10 +7,43 @@ Chiedi all’utente la sua email, controlla che sia nella lista di chi può acce
 //Imposto una lista (array) di email di utenti che possono accedere.
 const allowedUsers = ['federico.frasca796@gmail.com', 'marianoilvillano@tiscali.it', 'tizianotutor@hotmail.com'];
 
+/* !!! OVERRIDE BY BONUS !!!
 //Prendo l'email
-// const email = prompt("What's your email?");
-const email =("placeholder");
+const email = prompt("What's your email?");
+// const email =("placeholder");
+*/
 
+//BONUS ***************************************************************************
+
+//Usiamo un input e un bottone per inserire la mail e poi mostriamo i risultati in pagina.
+let email;
+//al click del pulsante, raccogli l'input
+document.getElementById('submit_button').addEventListener('click', function(){
+    email = document.getElementById('user_input').value;
+    // console.log(email)
+    let check = false;
+    //Controllo se l'email inserita dall'utente rientra tra quelle concesse
+    for (let i = 0; i < allowedUsers.length; i++) {
+        //Controllo se l'elemento dell'array attualmente selezionato combaci con l'email inserita dall'utente
+        if (email === allowedUsers[i]){
+            check = true; 
+        }
+    }
+
+    //Mostra a schermo l'esito del check.
+    //console.log(check);
+    if (check == true){
+        const Pass = `Welcome back <i>${email}</i>, good to see you again.`;
+        document.getElementById('mailResult').innerHTML = Pass;
+    } else{
+        const notPass = `I've never heard of <i>${email}</i>. Sorry, you're out.`;
+        document.getElementById('mailResult').innerHTML = notPass;
+    }
+})
+
+// ********************************************************************************
+
+/* !!! OVERRIDE BY BONUS !!!
 //Imposto una variabile sentinella fuori dal ciclo for. Questo mi serve per poterla richiamare fuori, al termine del ciclo, quando dovrò stampare a schermo il risultato.
 let check = false;
 
@@ -31,15 +64,7 @@ if (check == true){
     const notPass = `I've never heard of <i>${email}</i>. Sorry, you're out.`;
     document.getElementById('mailResult').insertAdjacentHTML('afterbegin', notPass);
 }
-
-//BONUS
-//Usiamo un input e un bottone per inserire la mail e poi mostriamo i risultati in pagina.
-
-
-
-
-
-
+*/
 
 
 
