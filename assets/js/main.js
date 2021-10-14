@@ -15,12 +15,24 @@ const email = prompt("What's your email?")
 for (let i = 0; i < allowedUsers.length; i++) {
     //creo una variabile che prenda tutti i singoli elementi dell'array allowedUsers
     const emailCheck = allowedUsers[i];
-    
+    // console.log(emailCheck)
+    const body = document.querySelector('body');
+
     //controllo se l'elemento dell'array attualmente selezionato combaci con l'email inserita dall'utente
     if (email === emailCheck){
-        //mostra a schermo l'esito del check.
-        //ATTENZIONE: potrebbe restituire tanti messaggi tanti quanti sono gli elementi dell'array. Se usassimo innerHTML questo andrebbe a sovrascrivere i messaggi, mostrandoci solo l'ultimo check...next problema: "L'ultimo check potrebbe non coincidere con l'email inserita, ma il prima check si."
+        // console.log('Sei dentro')
         
+        //mostra a schermo l'esito del check.
+        const Pass = `<h1><i>${email}</i> è nella mia lista. Sei dentro!</h1>`;
+        // body.insertAdjacentHTML('afterbegin', Pass); //NOT WORKING
+        body.innerHTML = Pass
+        
+    } else {
+        // console.log('Sei fuori')
+        
+        //mostra a schermo l'esito del check.
+        const notPass = `<h1>Non ho mai sentito parlare di <i>${email}</i>, mi spiace sei fuori. </h1>`;
+        body.innerHTML = notPass
     }
     
 }
