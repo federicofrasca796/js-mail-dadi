@@ -8,8 +8,8 @@ Chiedi all’utente la sua email, controlla che sia nella lista di chi può acce
 const allowedUsers = ['federico.frasca796@gmail.com', 'marianoilvillano@tiscali.it', 'tizianotutor@hotmail.com'];
 
 //Prendo l'email
-const email = prompt("What's your email?");
-// const email =("placeholder");
+// const email = prompt("What's your email?");
+const email =("placeholder");
 
 //Imposto una variabile sentinella fuori dal ciclo for. Questo mi serve per poterla richiamare fuori, al termine del ciclo, quando dovrò stampare a schermo il risultato.
 let check = false;
@@ -32,7 +32,18 @@ if (check == true){
     document.getElementById('mailResult').insertAdjacentHTML('afterbegin', notPass);
 }
 
+//BONUS
+//Usiamo un input e un bottone per inserire la mail e poi mostriamo i risultati in pagina.
 
+
+
+
+
+
+
+
+
+// ---------------------------------------------------------------------------------
 
 /*
 GIOCO DEI DADI
